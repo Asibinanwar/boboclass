@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <strong><u>Server Side</u></strong><br>
+        import java.io.DataInputStream;<br>
+import java.io.DataOutputStream;<br>
+import java.io.IOException;<br>
+import java.net.ServerSocket;<br>
+import java.net.Socket;<br>
+import java.net.SocketException;<br>
+import java.io.*;<br>
+public class selrepser<br>
+{<br>
+static ServerSocket Serversocket;<br>
+static DataInputStream dis;<br>
+static DataOutputStream dos;<br>
+
+public static void main(String[] args) throws SocketException<br>
+{<br>
+
+try<br>
+{<br>
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));<br>
+int a[] = new int[20];<br>
+System.out.println("Please enter the no of frames: ");<br>
+int y=Integer.parseInt(br.readLine());<br>
+System.out.println("Please enter the frames: ");<br>
+for(int k=0;k< y;k++)<br>
+a[k] = Integer.parseInt(br.readLine());<br>
+
+Serversocket = new ServerSocket(8011);<br>
+System.out.println("waiting for connection");<br>
+Socket client = Serversocket.accept();<br>
+dis = new DataInputStream(client.getInputStream());<br>
+dos = new DataOutputStream(client.getOutputStream());<br>
+System.out.println("The number of packets sent is:" + y);<br>
+
+dos.write(y);<br>
+dos.flush();<br>
+
+for (int i = 0; i < y; i++)<br>
+{<br>
+dos.write(a[i]);<br>
+dos.flush();<br>
+}<br>
+int q = dis.read();<br>
+
+dos.write(a[q]);<br>
+dos.flush();<br>
+
+}<br>
+catch (IOException e)<br>
+{<br>
+System.out.println(e);<br>
+}<br>
+finally<br>
+{<br>
+try<br>
+{<br>
+dis.close();<br>
+dos.close();<br>
+}<br>
+catch (IOException e)<br>
+{<br>
+e.printStackTrace();<br>
+}<br>
+
+}<br>
+}<br>
+}<br>
+<strong><u>Client Side</u></strong><br>
+import java.lang.System;<br>
+import java.net.*;<br>
+import java.io.*;<br>
+import java.text.*;<br>
+import java.util.Random;<br>
+import java.util.*;<br>
+
+public class selrepcli<br> {
+    <br>static Socket connection;
+
+    <br>public static void main(String a[]) throws SocketException <br>{<br>
+try<br> {<br>
+int v[] = new int[10];<br>
+int n = 0;<br>
+Random rands = new Random();<br>
+int rand = 0;<br>
+
+InetAddress addr = InetAddress.getByName("Localhost");<br>
+System.out.println(addr);<br>
+connection = new Socket(addr, 8011);<br>
+DataOutputStream out = new DataOutputStream(<br>
+connection.getOutputStream());<br>
+DataInputStream in = new DataInputStream(<br>
+connection.getInputStream());<br>
+int p = in.read();<br>
+System.out.println("No of frame is:" + p);<br>
+
+for (int i = 0; i < p; i++)<br> {<br>
+v[i] = in.read();<br>
+System.out.println(v[i]);<br>
+g[i] = v[i];<br>
+}<br>
+rand = rands.nextInt(p);  <br>                     
+v[rand] = -1;<br>
+for (int i = 0; i < p; i++)<br>
+{<br>
+System.out.println("Received frame is: " + v[i]);<br>
+
+}<br>
+for (int i = 0; i < p; i++)<br>
+if (v[i] == -1)<br> {<br>
+System.out.println("Request to retransmit from packet no " + (i+1) + " again!!");<br>
+n = i;<br>
+out.write(n);<br>
+out.flush();<br>
+}<br>
+
+System.out.println();<br>
+v[n] = in.read();<br>
+System.out.println("Received frame is: " + v[n]);<br>
+
+
+
+System.out.println("quiting");<br>
+} <br>catch (Exception e) <br>{<br>
+System.out.println(e);<br>
+}<br>
+
+}<br>
+}<br>
+
+    </body>
+</html>

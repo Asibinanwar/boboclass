@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            #include< stdio.h><br>
+            main()<br>
+            {<br>
+                int i,j,n,bu[10],wa[10],tat[10],t,ct[10],max;<br>
+                float awt=0,att=0,temp=0;<br>
+                printf("Enter the no of processes : ");<br>
+                scanf("%d",&n);<br>
+                for(i=0;i< n;i++)<br>
+                {<br>
+                    printf("\nEnter Burst time for process %d : ",i+1);<br>
+                    scanf("%d",&bu[i]);<br>
+                    ct[i]=bu[i];<br>
+                }<br>
+                printf("\nEnter the size of time slice : ");<br>
+                scanf("%d",&t);<br>
+                max=bu[0];<br>
+                for(i=1;i< n;i++)<br>
+                if(max< bu[i])<br>
+                max=bu[i];<br>
+                for(j=0;j< (max/t)+1;j++)<br>
+                for(i=0;i< n;i++)<br>
+                if(bu[i]!=0)<br>
+                if(bu[i]<=t)<br>
+                {<br>
+                    tat[i]=temp+bu[i];<br>
+                    temp=temp+bu[i];<br>
+                    bu[i]=0;<br>
+                }<br>
+                else<br>
+                {<br>
+                    bu[i]=bu[i]-t;<br>
+                    temp=temp+t;<br>
+                }<br>
+                for(i=0;i< n;i++)<br>
+                {<br>
+                    wa[i]=tat[i]-ct[i];<br>
+                    att+=tat[i];<br>
+                    awt+=wa[i];<br>
+                }<br>
+                printf("\nThe average Turnaround time is %f ",att/n);<br>
+                printf("\nThe Average Waiting time is %f ",awt/n);<br>
+                printf("\n\tProcess \t Burst Time\t Waiting Time\t Turnaround Time\n");<br>
+                for(i=0;i< n;i++)<br>
+                printf("\t%d\t%d\t\t%d\t\t%d\n",i+1,ct[i],wa[i],tat[i]);<br>
+           }
+        </p><br>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        #include< stdio.h><br>
+
+            void main()<br>
+            {<br>
+             int fragment[20],b[20],p[20],i,j,nb,np,temp,lowest=9999;<br>
+             static int barray[20],parray[20];<br>
+             printf("\n\t\t\tMemory Management Scheme - Best Fit");<br>
+             printf("\nEnter the number of blocks:");<br>
+             scanf("%d",&nb);<br>
+             printf("Enter the number of processes:");<br>
+             scanf("%d",&np);<br>
+             printf("\nEnter the size of the blocks:-\n");<br>
+             for(i=1;i<=nb;i++)<br>
+             {<br>
+                printf("Block no.%d:",i);<br>
+                scanf("%d",&b[i]);<br>
+             }<br>
+             printf("\nEnter the size of the processes :-\n");<br>
+             for(i=1;i<=np;i++)<br>
+             {<br>
+                printf("Process no.%d:",i);<br>
+                scanf("%d",&p[i]);<br>
+             }<br>
+             for(i=1;i<=np;i++)<br>
+             {<br>
+                for(j=1;j<=nb;j++)<br>
+                {<br>
+                    if(barray[j]!=1)<br>
+                    {<br>
+                        temp=b[j]-p[i];<br>
+                        if(temp>=0)<br>
+                        if(lowest>temp)<br>
+                        {<br>
+                            parray[i]=j;<br>
+                            lowest=temp;<br>
+                        }<br>
+                    }<br>
+                }<br>
+                fragment[i]=lowest;<br>
+                barray[parray[i]]=1;<br>
+                lowest=10000;<br>
+             }<br>
+             printf("\nProcess_no\tProcess_size\tBlock_no\tBlock_size\tFragment");<br>
+             for(i=1;i<=np && parray[i]!=0;i++)<br>
+             printf("\n%d\t\t%d\t\t%d\t\t%d\t\t%d",i,p[i],parray[i],b[parray[i]],fragment[i]);<br>
+            }<br>
+    </body>
+</html>

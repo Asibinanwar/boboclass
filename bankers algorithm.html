@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+        #include < stdio.h><br>
+            int main()<br>
+            {<br>
+            
+            int n, m, i, j, k;<br>
+            
+            printf("Enter the number of process : \n");<br>
+            scanf("%d",&n);<br>
+            printf("Enter the number of resources :\n");<br>
+            scanf("%d",&m);<br>
+            
+            int alloc[n][m], max[n][m], avail[m];<br>
+            printf("Enter the Allocation matrix : \n");<br>
+            for(i=0;i < n;i++)<br>
+             {<br>
+            for(j=0;j < m;j++)<br>
+            {<br>
+            scanf("%d", &alloc[i][j]);<br>
+            }<br>
+            }<br>
+            printf("Enter the Max matrix : \n");<br>
+             for(i=0;i< n;i++)<br>
+             {<br>
+            for(j=0;j< m;j++)<br>
+            {<br>
+            scanf("%d", &max[i][j]);<br>
+            }<br>
+            }<br>
+            printf("Enter the Available resources : \n");<br>
+            for(i=0;i < m;i++)<br>
+            {<br>
+            scanf("%d", &avail[i]);<br>
+            }<br>
+            
+            int f[n], ans[n], ind = 0;<br>
+            for (k = 0; k < n; k++) {<br>
+            f[k] = 0;<br>
+            }<br>
+            int need[n][m];<br>
+            for (i = 0; i < n; i++) {<br>
+            for (j = 0; j < m; j++)<br>
+            need[i][j] = max[i][j] - alloc[i][j];<br>
+            }<br>
+            int y = 0;<br>
+            for (k = 0; k < 5; k++) {<br>
+            for (i = 0; i < n; i++) {<br>
+            if (f[i] == 0) {<br>
+            int flag = 0;<br>
+            for (j = 0; j < m; j++) {<br>
+            if (need[i][j] > avail[j]){<br>
+            flag = 1;<br>
+            break;<br>
+            }<br>
+            }<br>
+            if (flag == 0) {<br>
+            ans[ind++] = i;<br>
+            for (y = 0; y < m; y++)<br>
+            avail[y] += alloc[i][y];<br>
+            f[i] = 1;<br>
+            }<br>
+            }<br>
+            }<br>
+            }<br>
+            
+            int flag = 1;<br>
+            
+            for(int i=0;i < n;i++)<br>
+            {<br>
+            if(f[i]==0)<br>
+            {<br>
+            flag=0;<br>
+            printf("The following system is not safe");<br>
+            break;<br>
+            }<br>
+            }<br>
+            
+            if(flag==1)<br>
+            {<br>
+            printf("Following is the SAFE Sequence\n");<br>
+            for (i = 0; i < n - 1; i++)<br>
+            printf(" P%d ->", ans[i]);<br>
+            printf(" P%d", ans[n - 1]);<br>
+            }<br>
+            printf("\n");<br>
+            
+            
+            return (0);<br>
+            
+            }<br>
+        </p>
+    </body>
+</html>

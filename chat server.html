@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            <strong><u>Server side</u></strong><br>
+
+import java.net.*;<br>
+import java.io.*;<br>
+public class chatser<br> {<br>
+public static void main(String args[]) throws Exception,UnknownHostException<br>{<br>
+
+ServerSocket ss=new ServerSocket(8088);<br>
+
+Socket s=ss.accept();;<br>
+
+DataInputStream din=new DataInputStream(s.getInputStream());<br>
+DataOutputStream dout=new DataOutputStream(s.getOutputStream());<br>
+
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));<br>
+String str="",str2="";<br>
+
+while(str!="stop")<br>
+{<br>
+System.out.println("Waiting for client's Reply...");<br>
+str=din.readUTF();<br>
+System.out.println("Client: "+str);<br>
+System.out.println("Enter Message:");<br>
+str2=br.readLine();<br>
+dout.writeUTF(str2);<br>
+dout.flush();<br>
+}<br>
+
+din.close();<br>
+s.close();<br>
+ss.close();<br>
+}<br>
+}<br>
+
+
+<strong><u> Client side</u></strong><br>
+import java.net.*;<br>
+import java.io.*;<br>
+public class chatcli<br>  {<br>
+
+public static void main(String[] args)  throws Exception<br> {<br>
+
+Socket s=new Socket("localhost",8088);<br>
+
+DataInputStream din=new DataInputStream(s.getInputStream());<br>
+DataOutputStream dout=new DataOutputStream(s.getOutputStream());<br>
+
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));<br>
+
+String str="",str2="";<br>
+
+while(!str.equals("stop"))<br>{<br>
+System.out.println("\nEnter Response: ");<br>
+str=br.readLine();<br>
+dout.writeUTF(str);<br>
+dout.flush();<br>
+System.out.println("Waiting for Server's Reply...");<br>
+str2=din.readUTF();<br>
+System.out.println("Server says: "+str2);<br>
+}<br>
+
+dout.close();<br>
+s.close();<br>
+
+}<br>
+}<br>
+
+
+        </p>
+    </body>
+</html>
