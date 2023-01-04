@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        < !DOCTYPE html><br>
+< html><br>
+< body><br>
+< h2>JavaScript addEventListener()< /h2><br>
+< p>This example demonstrates how to pass parameter values when
+using the addEventListener() method.< /p><br>
+< p>Click the button to perform a calculation.< /p><br>
+< button id="myBtn">Try it< /button><br>
+< p id="demo">< /p><br>
+< script><br>
+let p1 = 5;<br>
+let p2 = 7;<br>
+document.getElementById("myBtn").addEventListener("click",
+function() {<br>
+myFunction(p1, p2);<br>
+});<br>
+function myFunction(a, b) {<br>
+document.getElementById("demo").innerHTML = a * b;<br>
+}<br>
+< /script><br>
+< /body><br>
+< /html><br>
+    </body>
+</html>

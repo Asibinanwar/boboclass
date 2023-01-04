@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        < !DOCTYPE html><br>
+< html><br>
+< body><br>
+< h2>JavaScript Objects< /h2><br>
+< p>An object method is a function definition, stored as a property<br>
+value.< /p><br>
+< p id="demo">< /p><br>
+< script><br>
+const person = {<br>
+firstName: "John",<br>
+lastName: "Doe",<br>
+id: 5566,<br>
+fullName: function() {<br>
+return this.firstName + " " + this.lastName;<br>
+}<br>
+};<br>
+document.getElementById("demo").innerHTML = person.fullName();<br>
+< /script><br>
+< /body><br>
+< /html><br><br>
+<strong><u>Output</u></strong><br><br>
+JavaScript Objects<br>
+An object method is a function definition, stored as a property value.<br>
+John Doe<br>
+    </body>
+</html>

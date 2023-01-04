@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <strong><u>form.html</u></strong><br><br>
+< !DOCTYPE html><br>
+< head><br>
+< meta name="viewport" content="width=device-width, initial-scale=1.0"><br>
+< title>form< /title><br>
+< style><br>
+input{height: 25px;border-width: 2PX;}<br>
+body{background-color: aquamarine;}<br>
+< /style><br>
+< /head><br>
+< body><br>
+< script src="validate.js">< /script><br>
+< form name="myform" method="post" action="validate.js" onclick="validate()"><br>
+< h1>NAME:< input type="text" name="name" > < br>< /h1><br>
+< h1>Email: < input type="email" name="email">< br>< /h1><br>
+< h1>Password: < input type="password" name="password">< br>< /h1><br>
+< button>submit< /button><br>
+< /form><br>
+< /body><br>
+< /html><br><br>
+<strong><u>validate.js</u></strong><br><br>
+function validate()<br>
+{<br>
+var name=document.myform.name.value;<br>
+var email=document.myform.email.value;<br>
+var password=document.myform.password.value;<br>
+var atposition=email.indexOf("@");<br>
+var dotposition=email.lastIndexOf(".");<br>
+if(name==null||name=="")<br>
+{<br>
+alert("name can’t be blank");<br>
+}<br>
+else if(atposition< 1||dotposition< atposition+2||dotposition+2>=email.length)<br>
+{<br>
+alert("please enter a valid email");<br>
+}<br>
+else if(password.length< 8)<br>
+{<br>
+alert("password must be 8 charecter long");<br>
+}<br>
+else<br>
+{<br>
+alert("registered successfully");<br>
+}<br>
+}<br>
+    </body>
+</html>

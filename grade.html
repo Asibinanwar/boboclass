@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <strong><u>Index.html</u></strong><br><br>
+< !DOCTYPE html><br>
+< html lang="en"><br>
+< head><br>
+< meta charset="UTF-8"><br>
+< meta name="viewport" content="width=device-width, initial-scale=1.0"><br>
+< meta http-equiv="X-UA-Compatible" content="ie=edge"><br>
+< title>student< /title><br>
+< /head><br>
+< body><br>
+< h1>STUDENT GRADE FORM< /h1><br>
+NAME:< input type="text" name="name" id="">< br><br>
+MARK:< input type="text" name="mark" id="mark">< br><br>
+< button id="button" >GRADE< /button>< br><br>
+< div id="result">< /div><br>
+< script src="grade.js">< /script><br>
+< /body><br>
+< /html><br><br>
+<strong><u>grade.js</u></strong><br><br>
+var button=document.getElementById("button");<br>
+button.onclick=grade;<br>
+function grade()<br>
+{<br>
+var mark=document.getElementById("mark").value;<br>
+var grade;<br>
+var el=document.getElementById("result");<br>
+if(mark>90){<br>
+grade="A+";<br>
+}<br>
+else if(mark>=80 && mark<90){<br>
+grade="A";<br>
+}<br>
+else if(mark>=75 && mark<80){<br>
+grade="B+";<br>
+}<br>
+else if(mark>=40 && mark<75){<br>
+grade="P";<br>
+}<br>
+else{<br>
+grade="F";<br>
+}<br>
+el.innerHTML=grade;<br>
+}<br>
+    </body>
+</html>

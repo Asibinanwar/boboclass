@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        < !DOCTYPE html><br>
+< html><br>
+< body><br>
+< h2>JavaScript HTML DOM< /h2><br>
+< p>Add a new HTML Element.< /p><br>
+< div id="div1"><br>
+< p id="p1">This is a paragraph.< /p><br>
+< p id="p2">This is another paragraph.< /p><br>
+< /div><br>
+< script><br>
+const para = document.createElement("p");<br>
+const node = document.createTextNode("This is new.");<br>
+para.appendChild(node);<br>
+const element = document.getElementById("div1");<br>
+element.appendChild(para);<br>
+< /script><br>
+< /body><br>
+< /html><br>
+    </body>
+</html>
