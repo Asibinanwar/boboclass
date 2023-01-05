@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <strong><u>sort.html</u></strong><br><br>
+< !DOCTYPE html><br>
+< head><br>
+< title>test< /title><br>
+< script src="sort.js" >< /script><br>
+< /head><br>
+< body style="align-items: center;"><br>
+< button onclick="Sort()">sort< /button><br>
+< /body><br>
+< /html><br><br>
+<strong><u>sort.js</u></strong><br><br>
+function Sort()<br>
+{<br>
+var a=new Array();<br>
+var n=window.prompt("enter a limit");<br>
+for(var i=0;i< n;i++)<br>
+a[i]=parseInt(window.prompt("enter"+i+"th element"));<br>
+for( var i=0;i< n;i++)<br>
+document.write(a[i]+'< br/>');<br>
+for( var i=0;i< n;i++)<br>
+{<br>
+for(j=i+1;j< n;j++)<br>
+{<br>
+if(a[i]>a[j])<br>
+{<br>
+var t=a[i];<br>
+a[i]=a[j];<br>
+a[j]=t;<br>
+}<br>
+}<br>
+}<br>
+document.write('< br/>'+"sorted elements"+'< br/>');<br>
+for( var i=0;i< n;i++)<br>
+document.write(a[i]+'< br/>');<br>
+}<br>
+    </body>
+</html>
