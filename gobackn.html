@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            import java.io.*;<br>
+public class GoBackN {<br>
+
+ public static void main(String args[]) throws IOException<br>
+ {<br>
+  BufferedReader br = new BufferedReader(new InputStreamReader(System.in));<br>
+  
+  System.out.println("Please enter the Window Size: ");<br>
+  int window = Integer.parseInt(br.readLine());<br>
+  
+  boolean loop = true;<br>
+  int sent = 0;<br>
+  
+  while(loop)<br>
+  {<br>
+   
+   for(int i = 0; i < window; i++)<br>
+   {<br>
+    System.out.println("Frame " + sent + " has been transmitted.");<br>
+    sent++;<br>
+    if(sent == window)<br>
+     break;<br>
+   }<br>
+   
+   System.out.println("Please enter the last Acknowledgement received.");<br>
+   int ack = Integer.parseInt(br.readLine());<br>
+   
+   if(ack == window)<br>
+    loop = false;<br>
+   else<br>
+    sent = ack;<br>
+  }<br>
+  
+ }<br>
+ 
+}<br>
+        </p>
+</html>

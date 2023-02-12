@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            #include< stdio.h><br>
+                void main()<br>
+                {<br>
+                int bt[20],wt[20],tat[20],i,n;<br>
+                float wtavg,tatavg;<br>
+                printf("\n Enter the number of processes --");<br>
+                scanf("%d",&n);<br>
+                for(i=0;i< n;i++)<br>
+                {<br>
+                printf("\n Enter Burst time for process %d --",i);<br>
+                scanf("%d",&bt[i]);<br>
+                }<br>
+                wt[0]=wtavg=0;<br>
+                tat[0]=tatavg=bt[0];<br>
+                for(i=1;i< n;i++)<br>
+                {<br>
+                wt[i]=wt[i-1]+bt[i-1];<br>
+                tat[i]=tat[i]+bt[i];<br>
+                wtavg=wtavg+wt[i];<br>
+                tatavg=tatavg+tat[i];<br>
+                }<br>
+                printf("\nPROCESS \t BRUST TIME \t WAITING TIME \t TURNAROUND TIME\n");<br>
+                for(i=0;i< n;i++)<br>
+                {<br>
+                printf("\n %d \t\t %d \t\t %d \t\t %d",i,bt[i],wt[i],tat[i]);<br>
+                }<br>
+                printf("\n Average waiting time - %f", wtavg/n);<br>
+                printf("\n Average turnaround time - %f",tatavg/n);<br>
+                }<br>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            #include< stdio.h><br>
+                void main()<br>
+                {<br>
+                int p[20],pr[20],bt[20],wt[20],tat[20],i,k,n,temp;<br>
+                float wtavg,tatavg;<br>
+                printf("\n Enter the number of process -- ");<br>
+                scanf("%d",&n);<br>
+                for(i=0;i< n;i++)<br>
+                {<br>
+                p[i]=i;<br>
+                printf("Enter burst time and priority for process %d - ",i);<br>
+                scanf("%d%d",&bt[i],&pr[i]);<br>
+                }<br>
+                for(i=0;i< n;i++)<br>
+                for(k=i+1;k< n;k++)<br>
+                if(pr[i]>pr[k])<br>
+                {<br>
+                temp=pr[i];<br>
+                pr[i]=pr[k];<br>
+                pr[k]=temp;<br>
+                temp=p[i];<br>
+                p[i]=p[k];<br>
+                p[k]=temp;<br>
+                }<br>
+                wt[0]=wtavg=0;<br>
+                tat[0]=tatavg=bt[0];<br>
+                for(i=0;i< n;i++)<br>
+                {<br>
+                wt[i]=wt[i-1]+bt[i-1];<br>
+                tat[i]=tat[i-1]+bt[i];<br>
+                wtavg=wtavg+wt[i];<br>
+                tatavg=tatavg+tat[i];<br>
+                }<br>
+                printf("\nPROCESS \t PRIORITY \t BRUST TIME \t WAITING TIME \t TURNAROUND TIME\n");<br>
+                for(i=0;i< n;i++)<br>
+                {<br>
+                printf("\n %d \t\t %d \t\t %d \t\t %d \t\t %d",p[i],pr[i],bt[i],wt[i],tat[i]);<br>
+                }<br>
+                printf("\n Average waiting time - %f", wtavg/n);<br>
+                printf("\n Average turnaround time - %f\n",tatavg/n);<br>
+                }<br>
+                
+        </p>
+    </body>
+</html>

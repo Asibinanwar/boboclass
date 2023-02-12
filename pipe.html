@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            #include< stdio.h><br>
+                #include< unistd.h><br>
+                #include< string.h><br>
+                void main()<br>
+                {<br>
+                int p1[2],p2[2],p3[2],p4[2];<br>
+                int i,j=0,k=0,l=0;<br>
+                char r[10],s[10],t[10],u[10];<br>
+                printf("\t PROCESS 1. ENTER THE STRING : ");<br>
+                scanf("%s",r);<br>
+                pipe(p1);<br>
+                pipe(p2);<br>
+                write(p1[1],r,sizeof(r));<br>
+                write(p2[1],r,sizeof(r));<br>
+                int a=fork();<br>
+                if(a==0)<br>
+                {<br>
+                printf("\n\t PROCESS 2. It splits the given string\n");<br>
+                read(p1[0],r,sizeof(r));<br>
+                int n=strlen(r);<br>
+                for(i=0;i< n/2;i++)<br>
+                {<br>
+                s[i]=r[i];<br>
+                }<br>
+                for(i=n/2;i<=n;i++)<br>
+                {<br>
+                t[j++]=r[i];<br>
+                }<br>
+                pipe(p3);<br>
+                pipe(p4);<br>
+                write(p3[1],s,sizeof(s));<br>
+                write(p4[1],t,sizeof(t));<br>
+                int b=fork();<br>
+                if(b==0)<br>
+                {<br>
+                printf("p4%d\t",getpid());<br>
+                printf("p2%d\n",getppid());<br>
+                read(p3[0],s,sizeof(s));<br>
+                printf("\t PROCESS 4. Sub string \t%s\t",s);<br>
+                printf("no of char=%ld\n",strlen(s));<br>
+                }<br>
+                else<br>
+                {<br>
+                ///wait();<br>
+                printf("p2 %d\t",getpid());<br>
+                printf("p1%d\n",getppid());<br>
+                }<br>
+                }<br>
+                
+                else{<br>
+                ///wait();<br>
+                int d=fork();<br>
+                if(d==0)<br>
+                {<br>
+                printf("p3%d\t",getpid());<br>
+                printf("p1%d\n",getppid());<br>
+                read(p2[0],r,sizeof(r));<br>
+                for(i=strlen(r)-1;i>=0;i--)<br>
+                {<br>
+                u[l++]=r[i];<br>
+                }<br>
+                for(i=0;i< strlen(r);i++)<br>
+                {<br>
+                if(u[i]==r[i])<br>
+                k++;<br>
+                else<br>
+                continue;<br>
+                }<br>
+                if(k==strlen(r))<br>
+                printf("\t PROCESS 3. The given string is pallindrome\n");<br>
+                else<br>
+                printf("\t PROCESS 3. The given string is not pallindrome\n");<br>
+                }<br>
+                else{<br>
+                printf("p1%d\t",getpid());<br>
+                printf("Kernal %d\t\n",getppid());<br>
+                }<br>
+                }<br>
+                }<br>
+        </p>
+    </body>
+</html>

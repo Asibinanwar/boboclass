@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            #include< stdio.h><br>
+                #include< sys/ipc.h><br>
+                #include< sys/msg.h><br>
+                struct msg_buffer<br>
+                {<br>
+                long msg_type;<br>
+                char msg[100];<br>
+                }<br>
+                message;<br>
+                void main()<br>
+                {<br>
+                key_t my_key;<br>
+                int msg_id;<br>
+                my_key=ftok("progfile",65);<br>
+                msg_id=msgget(my_key,0666|IPC_CREAT);<br>
+                message.msg_type=1;<br>
+                printf("write Message : ");<br>
+                fgets(message.msg,100,stdin);<br>
+                msgsnd(msg_id,&message,sizeof(message),0);<br>
+                printf("sent message is : %s\n",message.msg);<br>
+                }<br>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            <strong>SERVER SIDE </strong><br><br>
+
+import java.net.*;<br>
+import java.io.*;<br>
+public class echoser {<br>
+public static void main(String args[]) throws EOFException,Exception,UnknownHostException{<br>
+
+ServerSocket ss=new ServerSocket(8088);<br>
+
+Socket s=ss.accept();;<br>
+
+DataInputStream din=new DataInputStream(s.getInputStream());<br>
+DataOutputStream dout=new DataOutputStream(s.getOutputStream());<br>
+
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));<br>
+
+String str="",str2="";<br>
+
+while(str!="stop")<br>
+{<br>
+System.out.println("Waiting for client's message...");<br>
+str=din.readUTF();<br>
+System.out.println("Client: "+str);<br>
+dout.flush();<br>
+}<br>
+
+din.close();<br>
+s.close();<br>
+ss.close();<br>
+}<br>
+}<br><br><br><br><br>
+
+
+<strong> CLIENT SIDE </strong><br><br>
+
+import java.net.*;<br>
+import java.io.*;<br>
+public class echocli  {<br>
+
+public static void main(String[] args)  throws Exception {<br>
+
+Socket s=new Socket("localhost",8088);<br>
+
+DataInputStream din=new DataInputStream(s.getInputStream());<br>
+DataOutputStream dout=new DataOutputStream(s.getOutputStream());<br>
+
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+
+<br>String str="",str2="";
+
+<br>while(!str.equals("stop")){<br>
+System.out.println("\nEnter message: ");<br>
+str=br.readLine();<br>
+dout.writeUTF(str);<br>
+dout.flush();<br>
+}<br>
+
+dout.close();<br>
+s.close();<br>
+
+}<br>
+}<br>
+
+        </p>
+    </body>
+</html>

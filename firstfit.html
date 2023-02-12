@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            #include< stdio.h><br>
+                void main()<br>
+                {<br>
+                    printf("\n\t\t\tMemory Management Scheme - First fit\n");<br>
+                    int bsize[10], psize[10], bno, pno, flags[10], allocation[10], i, j;<br>
+                    for(i = 0; i < 10; i++)<br>
+                    {<br>
+                        flags[i] = 0;<br>
+                        allocation[i] = -1;<br>
+                    }<br>
+                    printf("Enter no. of blocks: ");<br>
+                    scanf("%d", &bno);<br>
+                    printf("\nEnter size of each block: ");<br>
+                    for(i = 0; i < bno; i++)<br>
+                        scanf("%d", &bsize[i]);<br>
+                    printf("\nEnter no. of processes: ");<br>
+                    scanf("%d", &pno);<br>
+                    printf("\nEnter size of each process: ");<br>
+                    for(i = 0; i < pno; i++)<br>
+                        scanf("%d", &psize[i]);<br>
+                    for(i = 0; i < pno; i++)         <br>
+                        for(j = 0; j < bno; j++)<br>
+                            if(flags[j] == 0 && bsize[j] >= psize[i])<br>
+                            {<br>
+                                allocation[j] = i;<br>
+                                flags[j] = 1;<br>
+                                break;<br>
+                            }<br>
+                    
+                    printf("\nBlock no.\tsize\t\tprocess no.\t\tsize");<br>
+                    for(i = 0; i < bno; i++)<br>
+                    {<br>
+                        printf("\n%d\t\t%d\t\t", i+1, bsize[i]);<br>
+                        if(flags[i] == 1)<br>
+                            printf("%d\t\t\t%d",allocation[i]+1,psize[allocation[i]]);<br>
+                        else<br>
+                            printf("Not allocated");<br>
+                    }<br>
+                    printf("\n");<br>
+                }<br>
+        </p>
+    </body>
+</html>

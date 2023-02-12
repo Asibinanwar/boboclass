@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>#include< stdio.h><br>
+            #include< stdlib.h><br>
+            #include< pthread.h><br>
+            #include< semaphore.h><br>
+            
+            void *func(int n);<br>
+            pthread_t philosopher[5];<br>
+            pthread_mutex_t chopstick[5];<br>
+            
+            int main()<br>
+            {<br>
+                int i,k;<br>
+                void *msg;<br>
+            
+                for(i=1;i<=5;i++)<br>
+                {  <br>
+                    k=pthread_mutex_init(&chopstick[i],NULL);<br>
+                    if(k==-1)<br>
+                    {<br>
+                        printf("\\n Mutex initialization failed");<br>
+                        exit(1);<br>
+                    }<br>
+                }<br>
+            
+                for(i=1;i<=5;i++)<br>
+                {<br>
+                    k=pthread_create(&philosopher[i],NULL,(void *)func,(int *)i);<br>
+                    if(k!=0)<br>
+                    {<br>
+                        printf("\\n Thread creation error \\n");<br>
+                        exit(1);<br>
+                    }<br>
+                }<br>
+            
+                for(i=1;i<=5;i++)<br>
+                {<br>
+                    k=pthread_join(philosopher[i],&msg);<br>
+                    if(k!=0)<br>
+                    {<br>
+                        printf("\\n Thread join failed \\n");<br>
+                        exit(1);<br>
+                    }<br>
+                }<br>
+            
+                for(i=1;i<=5;i++)<br>
+                {<br>
+                    k=pthread_mutex_destroy(&chopstick[i]);<br>
+                    if(k!=0)<br>
+                    {<br>
+                        printf("\n Mutex Destroyed \n");<br>
+                        exit(1);<br>
+                    }<br>
+                }<br>
+            
+            return 0;<br>
+            }<br>
+            
+            void *func(int n)<br>
+            {<br>
+                printf("\nPhilosopher %d is thinking ",n);<br>
+                pthread_mutex_lock(&chopstick[n]);<br>
+                pthread_mutex_lock(&chopstick[(n+1)%5]);<br>
+                printf("\nPhilosopher %d is eating ",n);<br>
+                sleep(3);<br>
+                pthread_mutex_unlock(&chopstick[n]);<br>
+                pthread_mutex_unlock(&chopstick[(n+1)%5]);<br>
+                printf("\nPhilosopher %d Finished eating ",n);<br>
+            }</p>
+       </body>
+</html>

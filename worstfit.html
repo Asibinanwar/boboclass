@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            #include< stdio.h><br>
+                #include< string.h><br>
+                
+                void worstFit(int blockSize[], int m, int processSize[],int n)<br>
+                {<br>
+                
+                    int allocation[n],wstIdx,i,j;<br>
+                    memset(allocation, -1, sizeof(allocation));<br>
+                    for (i=0; i< n; i++)<br>
+                    {<br>
+                
+                        wstIdx = -1;<br>
+                        for (j=0; j< m; j++)<br>
+                        {<br>
+                            if (blockSize[j] >= processSize[i])<br>
+                            {<br>
+                                if (wstIdx == -1)<br>
+                                    wstIdx = j;<br>
+                                else if (blockSize[wstIdx] < blockSize[j])<br>
+                                    wstIdx = j;<br>
+                            }<br>
+                        }<br>
+                
+                
+                        if (wstIdx != -1)<br>
+                        {<br>
+                            allocation[i] = wstIdx;<br>
+                            blockSize[wstIdx] -= processSize[i];<br>
+                        }<br>
+                    }<br>
+                
+                    printf("\nProcess No.\tProcess Size\tBlock no.\n");<br>
+                    for (int i = 0; i < n; i++)<br>
+                    {<br>
+                        printf("%d\t\t%d\t\t ",i+1,processSize[i]);<br>
+                
+                        if (allocation[i] != -1)<br>
+                            printf("%d",allocation[i] + 1);<br>
+                        else<br>
+                        printf("Not Allocated");<br>
+                        printf("\n");<br>
+                    }<br>
+                }<br>
+                
+                
+                int main()<br>
+                {<br>
+                    int blockSize[10],processSize[10],m,n,i;<br>
+                    printf("\n\t\tMemory Management Scheme - Worst Fit\n\n");<br>
+                    printf("Enter the number of block :");<br>
+                    scanf("%d",&m);<br>
+                    printf("Enter the block size :\n");<br>
+                    for(i=0;i< m;i++)<br>
+                    scanf("%d",&blockSize[i]);<br>
+                    printf("Enter the number of process :");<br>
+                    scanf("%d",&n);<br>
+                    printf("Enter process size :\n");<br>
+                    for(i=0;i< n;i++)<br>
+                    {<br>
+                
+                        scanf("%d",&processSize[i]);<br>
+                    }<br>
+                
+                    worstFit(blockSize, m, processSize, n);<br>
+                   
+                    printf("\n");<br>
+                
+                    return 0 ;<br>
+                }<br>
+        </p>
+    </body>
+</html>
