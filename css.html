@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            < !DOCTYPE html><br>
+< html lang="en"><br>
+< head><br>
+< title>CSS Website Layout< /title><br>
+< meta charset="utf-8"><br>
+< meta name="viewport" content="width=device-width, initial-scale=1">< style><br>
+*{<br>
+box-sizing: border-box;<br>
+}<br>
+body{<br>
+margin: 0;<br>
+}<br>
+/*Style the header */<br>
+.header{background-color:#f1f1f1;padding: 20px;text-align: center;<br>
+}<br>
+/* Style the top navigation bar */<br>
+.topnav {overflow: hidden;background-color: #333;<br>
+}<br>
+/*Style the topnav links */<br>
+.topnav a{<br>
+float:left;<br>
+display: block;<br>
+color: #f2f2f2;<br>
+text-align: center;<br>
+padding: 14px 16px;<br>
+text-decoration: none;<br>
+}<br>
+/* Change color on hover */<br>
+.topnav a:hover {background-color: #ddd;<br>
+color: black;<br>
+}<br>
+/* Create three unequal columns that floats next to each other */<br>
+.column{<br>
+float: left;<br>
+padding: 10px;<br>
+}<br>
+/* Left and right column */<br>
+.column.side{<br>
+width:25%;<br>
+}<br>
+/* Middle column */<br>
+.column.middle{<br>
+width:50%;<br>
+}/* Clear floats after the columns */<br>
+.row:after{<br>
+content:"";<br>
+display: table;<br>
+clear: both;<br>
+}<br>
+/* Responsive layout - makes the three columns stack on top of each otherinstead of next to each other */<br>
+@media screen and (max-width: 600px) {<br>
+.column.side,.column.middle {<br>
+width: 100%;<br>
+}<br>
+}<br>
+/* Style the footer */<br>
+.footer {background-color:#f1f1f1;padding: 10px;text-align: center;<br>
+}<br>
+< /style><br>
+< /head><br>< body><br>
+< div class="header"><br>
+< h1>Header< /h1><br>
+< p>Resize the browser window to see the responsive effect.< /p>< /div><br>
+< div class="topnav">< a href="#">Link< /a>< a href="#">Link< /a>< a href="#">Link< /a><br>
+< /div><br>
+< div class="row"><br>
+< div class="column side"><br>
+< h2>Side< /h2><br>
+< p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..< /p><br>
+< /div><br>
+< div class="column middle"><br>
+< h2>Main Content< /h2><br>
+< p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sitamet pretium urna. Vivamus venenatis velit nec neque ultricies, egetelementum magna tristique. Quisque vehicula, risus eget aliquam placerat,purus leo tincidunt eros, eget luctus quam orci in velit. Praesentscelerisque tortor sed accumsan convallis.< /p><br>
+< p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sitamet pretium urna. Vivamus venenatis velit nec neque ultricies, egetelementum magna tristique. Quisque vehicula, risus eget aliquam placerat,purus leo tincidunt eros, eget luctus quam orci in velit. Praesentscelerisque tortor sed accumsan convallis.< /p><br>
+< /div><br>
+< div class="column side"><br>
+< h2>Side< /h2><br>
+< p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..< /p>< /div><br>
+< /div><br>
+< div class="footer"><br>
+< p>Footer< /p><br>
+< /div><br>
+< /body><br>
+< /html><br>
+        </p>
+    </body>
+</html>

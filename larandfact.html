@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            < !DOCTYPE html><br>
+            < html><br>
+            < head><br>
+                < title>Largest Number and Factorial Finder< /title><br>
+                < script><br>
+                function findLargestAndFactorial() {<br>
+                var numbers = document.getElementById("numbers").value.split(",");<br>
+                var largest = parseInt(numbers[0]);<br>
+                for (var i = 1; i < numbers.length; i++) {<br>
+                var num = parseInt(numbers[i]);<br>
+                if (num > largest) {<br>
+                largest = num;<br>
+                }<br>
+            }<br>
+                document.getElementById("largest").innerHTML = "Largest number: " + largest;<br>
+                var factorial = 1;<br>
+                for (var i = 1; i <= largest; i++) {<br>
+                
+                factorial *= i;<br>
+                }<br>
+                document.getElementById("factorial").innerHTML = "Factorial of " + largest + ": " + factorial;<br>
+            }<br>
+                < /script><br>
+                
+                < /head><br>
+                
+                < body><br>
+                
+                < h1>Largest Number and Factorial Finder< /h1> <br>
+                < p>Enter a list of comma-separated numbers:< /p><br>
+                
+                < input type="text" id="numbers" name="numbers"> <br>
+                
+                < button onclick="findLargestAndFactorial()">Find< /button><br>
+                
+                < p id="largest">< /p><br>
+                
+                < p id="factorial">< /p><br>
+                
+                < /body><br>
+            < /html><br>
+        </p>
+    </body>
+</html>
