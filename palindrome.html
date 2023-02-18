@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            import java.util.Scanner;<br>
+class Test{<br>
+public static void main(String args[]){<br>
+Scanner sc = new Scanner(System.in);<br>
+System.out.print("Enter the String:");<br>
+String str = sc.nextLine();<br>
+int flag = 0;<br>
+int len = str.length();<br>
+for(int i=0;i<len/2;i++){<br>
+if(str.charAt(i) != str.charAt(len-i-1)){<br>
+flag = 1;<br>
+break;<br>
+}<br>
+}<br>
+if(flag == 0){<br>
+System.out.println("Palindrome");<br>
+}<br>
+else{<br>
+System.out.println("Not Palindrome");<br>
+}<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

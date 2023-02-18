@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            import java.util.*;<br>
+class MatSumOdd<br>
+{<br>
+public static void main(String args[])<br>
+{<br>
+Scanner sc = new Scanner(System.in);<br>
+int mat[][];<br>
+int row;<br>
+int col;<br>
+int oddSum = 0;<br>
+System.out.print("Enter row, column of the matrix :- \t");<br>
+row = sc.nextInt();<br>
+col = sc.nextInt();<br>
+mat = new int[row][col];<br>
+System.out.println("Enter the elements of the matrix :- ");<br>
+for(int i=0; i< row; i++)<br>
+{<br>
+for(int j=0; j< col; j++)<br>
+{<br>
+mat[i][j] = sc.nextInt();<br>
+}<br>
+}<br>
+for(int i=0; i< row; i++)<br>
+{<br>
+for(int j=0; j< col; j++)<br>
+{<br>
+if(mat[i][j] %2 == 1)<br>
+{<br>
+oddSum = oddSum + mat[i][j];<br>
+}<br>
+}<br>
+}<br>
+System.out.println("The Sum of odd elements present in matrix is "+oddSum);
+<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

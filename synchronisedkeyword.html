@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            class Cricket<br>
+{<br>
+static synchronized void dispPlayers(String s1, String s2)<br>
+{<br>
+try<br>
+{<br>
+Thread.sleep(1000);<br>
+System.out.print(" "+s1);<br>
+System.out.print(" "+s2);<br>
+System.out.println();<br>
+}<br>
+catch(InterruptedException e)<br>
+{<br>
+System.out.println(e);<br>
+}<br>
+}<br>
+}<br>
+class Thread1 extends Thread<br>
+{<br>
+public void run()<br>
+{<br>
+Cricket.dispPlayers("Virat","Kohli");<br>
+}<br>
+}<br>
+class Thread2 extends Thread<br>
+{<br>
+public void run()<br>
+{<br>
+Cricket.dispPlayers("Babar", "Azam");<br>
+}<br>
+}<br>
+class SynchroDemo<br>
+{<br>
+public static void main(String args[])<br>
+{<br>
+Thread1 t1 = new Thread1();<br>
+Thread2 t2 = new Thread2();<br>
+t1.start();<br>
+t2.start();<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

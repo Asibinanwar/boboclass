@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            package primepackage;<br>
+public class Numbers<br>
+{<br>
+public static void checkPrime(int num)<br>
+{<br>
+int flag = 1;<br>
+for(int i=2; i< num; i++)<br>
+{<br>
+if(num % i == 0)<br>
+{<br>
+flag = 0;<br>
+break;<br>
+}<br>
+}<br>
+if(flag == 1)<br>
+{<br>
+System.out.println(num+" is a prime number.");<br>
+}<br>
+else<br>
+{<br>
+System.out.println(num+" is not a prime number.");<br>
+}<br>
+}<br>
+}<br>
+Outside the folder create a java file “PackageDemo.java”<br>
+import java.util.*;<br>
+import primepackage.*;<br>
+class PackageDemo<br>
+{<br>
+public static void main(String args[])<br>
+{<br>
+Scanner sc = new Scanner(System.in);<br>
+System.out.print("Enter Number :- \t");<br>
+int num = sc.nextInt();<br>
+Numbers.checkPrime(num);<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

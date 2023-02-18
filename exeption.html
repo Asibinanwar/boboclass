@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            import java.util.*;<br>
+class Maths<br>
+{<br>
+double findQuotient(int num1, int num2) throws ArithmeticException,<br>
+NumberFormatException,InputMismatchException<br>
+{<br>
+double result = num1/num2;<br>
+return result;<br>
+}<br>
+}<br>
+class ExceptionHandle<br>
+{<br>
+public static void main(String args[])<br>
+{<br>
+Scanner sc = new Scanner(System.in);<br>
+System.out.println("Enter 2 Numbers :- ");<br>
+try<br>
+{<br>
+int num1 = sc.nextInt();<br>
+int num2 = sc.nextInt();<br>
+Maths m = new Maths();<br>
+System.out.println(num1+" / "+ num2 + " = "+m.findQuotient(num1,
+num2));<br>
+}<br>
+catch(ArithmeticException e)<br>
+{<br>
+System.out.println("\t A Number cannot be divided by Zero...");<br>
+}<br>
+catch(NumberFormatException e)<br>
+{<br>
+System.out.println("\t Please do enter 2 integer values...");<br>
+}<br>
+catch(InputMismatchException e)<br>
+{<br>
+System.out.println("\t Two integers are expected....");<br>
+}<br>
+catch(Exception e)<br>
+{<br>
+System.out.println("\t Something went wrong....");<br>
+}<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

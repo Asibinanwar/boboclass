@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            import java.io.*;<br>
+class FileRev<br>
+{<br>
+public static void main(String args[])<br>
+{<br>
+File InputFile = new File("Input.txt");<br>
+File OutputFile = new File("Output.txt");<br>
+FileReader MyReader = null;<br>
+FileWriter MyWriter = null;<br>
+try<br>
+{<br>
+MyReader = new FileReader(InputFile);<br>
+MyWriter = new FileWriter(OutputFile);<br>
+int ch;<br>
+int a[] = new int[20];<br>
+int count = 0;<br>
+while( (ch = MyReader.read()) != -1)<br>
+{<br>
+a[count] = ch;<br>
+count++;<br>
+}<br>
+while(count > 0)<br>
+{<br>
+count--;<br>
+MyWriter.write(a[count]);<br>
+}<br>
+System.out.println("Success!!");<br>
+}<br>
+catch(IOException e)<br>
+{<br>
+System.out.println("Error Encountered..."+e);<br>
+}<br>
+finally<br>
+{<br>
+try<br>
+{<br>
+MyReader.close();<br>
+MyWriter.close();<br>
+}<br>
+catch(IOException e)<br>
+{<br>
+System.out.println("Error Encountered..."+e);<br>
+}<br>
+}<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

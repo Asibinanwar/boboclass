@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            import java.util.Scanner;<br>
+class Test{<br>
+public static void main(String args[]){<br>
+Scanner sc = new Scanner(System.in);<br>
+try{<br>
+System.out.println("Program to perform Division");<br>
+System.out.print("Enter Number-1:");<br>
+int a = sc.nextInt();<br>
+System.out.print("Enter Number-2:");<br>
+int b = sc.nextInt();<br>
+int c = a/b;<br>
+System.out.println("Result="+c);<br>
+}<br>
+catch(ArithmeticException e){<br>
+System.out.println(e.getMessage());<br>
+}<br>
+finally{<br>
+System.out.println("End of Operation");<br>
+}<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

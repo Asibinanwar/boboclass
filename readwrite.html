@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            import java.io.*;<br>
+import java.lang.*;<br>
+class contol<br>
+{<br>
+static boolean flag = false;<br>
+void read (int a)<br>
+{<br>
+System.out.println ("Reading ...");<br>
+try<br>
+{<br>
+Thread.sleep (3000);<br>
+}<br>
+catch (InterruptedException e)<br>
+{<br>
+e.printStackTrace ();<br>
+}<br>
+System.out.println ("Reading completed");<br>
+}<br>
+synchronized void read ()<br>
+{<br>
+System.out.println ("Reading ...");<br>
+try<br>
+{<br>
+Thread.sleep (3000);<br>
+}<br>
+catch (InterruptedException e)<br>
+{<br>
+e.printStackTrace ();<br>
+}<br>
+System.out.println ("Reading completed");<br>
+}<br>
+synchronized void write ()<br>
+{<br>
+flag = true;<br>
+System.out.println ("Writing ... ");<br>
+try<br>
+{<br>
+Thread.sleep (50);<br>
+}<br>
+catch (InterruptedException e)<br>
+{<br>
+e.printStackTrace ();<br>
+}<br>
+System.out.println ("Writing completed");<br>
+flag = false;<br>
+}<br>
+}<br>
+class Read extends Thread<br>
+{<br>
+contol ob;<br>
+Read (contol d)<br>
+{<br>
+this.ob = d;<br>
+start ();<br>
+}<br>
+public void run ()<br>
+{<br>
+if (!contol.flag)<br>
+ob.read (1);<br>
+else<br>
+ob.read ();<br>
+}<br>
+}<br>
+class Write extends Thread<br>
+{<br>
+contol ob;<br>
+Write (contol c)<br>
+{<br>
+this.ob = c;<br>
+start ();<br>
+}<br>
+public void run ()<br>
+{<br>
+ob.write ();<br>
+}<br>
+}<br>
+public class Rwproblem<br>
+{<br>
+public static void main (String args[]) throws Exception<br>
+{<br>
+int ch = 0;<br>
+contol ob = new contol ();<br>
+InputStreamReader in= new InputStreamReader (System.in);<br>
+BufferedReader br = new BufferedReader (in);<br>
+do<br>
+{<br>
+System.out.println<br>
+("\n MENU \n1.Read \n2.Write \n3.Exit \n\nEnter your choice:");<br>
+ch = Integer.parseInt (br.readLine ());<br>
+switch (ch)<br>
+{<br>
+case 1:<br>
+new Read (ob);<br>
+break;<br>
+case 2:<br>
+new Write (ob);<br>
+break;<br>
+case 3:<br>
+break;<br>
+default:<br>
+System.out.println ("Wrong Choice");<br>
+}<br>
+}<br>
+while (ch != 3);<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

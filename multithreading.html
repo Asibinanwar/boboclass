@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            class OddNums implements Runnable<br>
+{<br>
+public void run()<br>
+{<br>
+for(int i=1; i<=20; i+=2)<br>
+{<br>
+try<br>
+{<br>
+System.out.println(i);<br>
+Thread.sleep(1000);<br>
+}<br>
+catch(InterruptedException e)<br>
+{<br>
+System.out.println(e);<br>
+}<br>
+}<br>
+}<br>
+}<br>
+class EvenNums extends Thread<br>
+{<br>
+public void run()<br>
+{<br>
+for(int i=0; i<=20; i+=2)<br>
+{<br>
+try<br>
+{<br>
+System.out.println(i);<br>
+Thread.sleep(1000);<br>
+}<br>
+catch(InterruptedException e)<br>
+{<br>
+System.out.println(e);<br>
+}<br>
+}<br>
+}<br>
+}<br>
+class ThreadDemo<br>
+{<br>
+public static void main(String args[])<br>
+{<br>
+System.out.println("-----Program Started-----");<br>
+Thread t;<br>
+OddNums o = new OddNums();<br>
+EvenNums e = new EvenNums();<br>
+t = new Thread(o);<br>
+t.start();<br>
+e.start();<br>
+System.out.println("-----Program Finished-----");<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

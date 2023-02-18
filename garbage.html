@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            public class Test<br>
+{<br>
+public static void main(String[] args) throws InterruptedException<br>
+{<br>
+Test t1 = new Test();<br>
+Test t2 = new Test();<br>
+t1 = null;<br>
+System.gc();<br>
+t2 = null;<br>
+Runtime.getRuntime().gc();<br>
+}<br>
+@Override<br>
+protected void finalize() throws Throwable<br>
+{<br>
+System.out.println("Garbage collector called");<br>
+System.out.println("Object garbage collected : " + this);<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

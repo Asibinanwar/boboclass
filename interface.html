@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            interface Shape<br>
+{<br>
+void area();<br>
+void perimeter();<br>
+}<br>
+class Circle implements Shape<br>
+{<br>
+int radius;<br>
+Circle()<br>
+{<br>
+radius = 0;<br>
+}<br>
+Circle(int radius)<br>
+{<br>
+this.radius = radius;<br>
+}<br>
+void dispSpecs()<br>
+{<br>
+System.out.println("Radius Of Circle = "+radius);<br>
+}<br>
+public void area()<br>
+{<br>
+double area = 3.14*radius*radius;<br>
+System.out.println("The area of circle :- "+area);<br>
+}<br>
+public void perimeter()<br>
+{<br>
+double perim = 2*3.14*radius;<br>
+System.out.println("The perimeter of circle :- "+perim);<br>
+}<br>
+}<br>
+class Rectangle implements Shape<br>
+{<br>
+int length;<br>
+int breadth;<br>
+Rectangle()<br>
+{<br>
+length = 0;<br>
+breadth = 0;<br>
+}<br>
+Rectangle(int length, int breadth)<br>
+{<br>
+this.length = length;<br>
+this.breadth = breadth;<br>
+}<br>
+void dispSpecs()<br>
+{<br>
+System.out.println("Length = "+length+", Breadth = "+breadth);<br>
+}<br>
+public void area<br>
+{<br>
+double area = length*breadth;<br>
+System.out.println("The area of Rectangle :- "+area);<br>
+}<br>
+public void perimeter()<br>
+{<br>
+double perim = 2*(length+breadth);<br>
+System.out.println("The perimeter of Rectangle :- "+perim);<br>
+}<br>
+}<br>
+class InterfaceDemo<br>
+{<br>
+public static void main(String args[])<br>
+{<br>
+Rectangle r1 = new Rectangle(10,5);<br>
+Circle c1 = new Circle(5);<br>
+System.out.println("==== Rectangle ====");<br>
+r1.dispSpecs();<br>
+r1.area();<br>
+r1.perimeter();<br>
+System.out.println("\n==== Circle ====");<br>
+c1.dispSpecs();<br>
+c1.area();<br>
+c1.perimeter();<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

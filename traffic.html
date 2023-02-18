@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            import javax.swing.*;<br>
+import java.awt.*; <br>
+import java.awt.event.*;<br>
+class light extends JPanel implements ActionListener<br>
+{<br>
+private JRadioButton r1; private JRadioButton r2; private JRadioButton
+r3;<br>
+private Color red_c; private Color yellow_c; private Color green_c;<br>
+public light()<br>
+{<br>
+setBounds(0,0,640,480);<br>
+r1 = new JRadioButton("Red");<br>
+r2 = new JRadioButton("Yellow"); r3 = new JRadioButton("Green");<br>
+r1.setSelected(true); // to get red selected as default red_c = Color.red;<br>
+yellow_c = getBackground(); green_c = getBackground();<br>
+ButtonGroup gp = new ButtonGroup();<br>
+gp.add(r1);<br>
+gp.add(r2);<br>
+gp.add(r3);<br>
+add(r1);<br>
+add(r2);<br>
+add(r3);<br>
+r1.addActionListener(this); r2.addActionListener(this);<br>
+r3.addActionListener(this);<br>
+}<br>
+public void actionPerformed(ActionEvent e)<br>
+{<br>
+if(r1.isSelected() == true)<br>
+{<br>
+red_c = Color.red;<br>
+yellow_c = getBackground(); green_c = getBackground();<br>
+}<br>
+else if(r2.isSelected() == true)<br>
+{<br>
+red_c = getBackground(); yellow_c = Color.yellow; green_c =
+getBackground();<br>
+}<br>
+else if(r3.isSelected() == true)<br>
+{<br>
+red_c = getBackground(); yellow_c = getBackground(); green_c =
+Color.green;<br>
+}<br>
+repaint();<br>
+}<br>
+public void paintComponent(Graphics g)<br>
+{<br>
+super.paintComponent(g); g.drawOval(50,50,50,50);<br>
+g.drawOval(50,110,50,50); g.drawOval(50,170,50,50);<br>
+g.setColor(red_c); g.fillOval(50,50,50,50); g.setColor(yellow_c);<br>
+g.fillOval(50,110,50,50); g.setColor(green_c); g.fillOval(50,170,50,50);<br>
+}<br>
+}<br>
+public class trafficlight<br>
+{<br>
+public static void main(String args[])<br>
+{<br>
+JFrame f = new JFrame(); f.setVisible(true); f.setSize(640,480);<br>
+f.setLayout(null);<br>
+light t = new light(); f.add(t);<br>
+}<br>
+}<br>
+import javax.swing.*;<br>
+import java.awt.*;<br>
+public class TrafficLight extends JFrame {<br>
+private JPanel panel;<br>
+public TrafficLight() {<br>
+setTitle("Traffic Light");<br>
+setSize(200, 400);<br>
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);<br>
+panel = new JPanel(new GridLayout(3, 1));<br>
+panel.setBackground(Color.BLACK);<br>
+JButton redButton = new JButton();<br>
+redButton.setBackground(Color.RED);<br>
+panel.add(redButton);<br>
+JButton yellowButton = new JButton();<br>
+yellowButton.setBackground(Color.YELLOW);<br>
+panel.add(yellowButton);<br>
+JButton greenButton = new JButton();<br>
+greenButton.setBackground(Color.GREEN);<br>
+panel.add(greenButton);<br>
+add(panel, BorderLayout.CENTER);<br>
+setVisible(true);<br>
+}<br>
+public static void main(String[] args) {<br>
+new TrafficLight();<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

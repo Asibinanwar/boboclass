@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            import java.util.Scanner;<br>
+// Binary Search in Java<br>
+class Main {<br>
+int binarySearch(int array[], int element, int low, int high) {<br>
+// Repeat until the pointers low and high meet each other<br>
+while (low <= high) {<br>
+// get index of mid element<br>
+int mid = low + (high - low) / 2;<br>
+// if element to be searched is the mid element<br>
+if (array[mid] == element)<br>
+return mid;<br>
+// if element is less than mid element<br>
+// search only the left side of mid<br>
+if (array[mid] < element)<br>
+low = mid + 1;<br>
+// if element is greater than mid element<br>
+// search only the right side of mid<br>
+else<br>
+high = mid - 1;<br>
+}<br>
+return -1;<br>
+}<br>
+public static void main(String args[]) {<br>
+// create an object of Main class<br>
+Main obj = new Main();<br>
+// create a sorted array<br>
+int[] array = { 3, 4, 5, 6, 7, 8, 9 };<br>
+int n = array.length;<br>
+// get input from user for element to be searched<br>
+38Scanner input = new Scanner(System.in);<br>
+System.out.println("Enter element to be searched:");<br>
+// element to be searched<br>
+int element = input.nextInt();<br>
+input.close();<br>
+// call the binary search method<br>
+// pass arguments: array, element, index of first and last element<br>
+int result = obj.binarySearch(array, element, 0, n - 1);<br>
+if (result == -1)<br>
+System.out.println("Not found");<br>
+else<br>
+System.out.println("Element found at index " + result);<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>
