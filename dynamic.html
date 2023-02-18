@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            class Animal<br>
+{<br>
+void makeSound()<br>
+{<br>
+System.out.println("My Sound is Unknown....");<br>
+}<br>
+}<br>
+class Cat extends Animal<br>
+{<br>
+void makeSound()<br>
+{<br>
+System.out.println("My Sound is MEOW MEOW....");<br>
+}<br>
+}<br>
+class Dog extends Animal<br>
+{<br>
+void makeSound()<br>
+{<br>
+System.out.println("My Sound is BOW BOW....");<br>
+}<br>
+}<br>
+class DynamicMethodDispatch<br>
+{<br>
+public static void main(String args[])<br>
+{<br>
+Animal ref = new Animal();<br>
+Cat c1 = new Cat();<br>
+Dog d1 = new Dog();<br>
+ref.makeSound();<br>
+ref = c1;<br>
+ref.makeSound();<br>
+ref = d1;<br>
+ref.makeSound();<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

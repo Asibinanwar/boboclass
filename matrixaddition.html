@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            import java.util.*;<br>
+class Matrix<br>
+{<br>
+int row;<br>
+int col;<br>
+int a[][];<br>
+Matrix(int row, int col)<br>
+{<br>
+this.row = row;<br>
+this.col = col;<br>
+a = new int[row][col];<br>
+}<br>
+void readMatrix()<br>
+{<br>
+Scanner sc = new Scanner(System.in);<br>
+System.out.println("Enter elements of the matrix :- ");<br>
+for(int i=0; i< row; i++)<br>
+{<br>
+for(int j=0; j< col; j++)<br>
+{<br>
+a[i][j] = sc.nextInt();<br>
+}<br>
+}<br>
+}<br>
+Matrix addMatrix(Matrix m)<br>
+{<br>
+Matrix res = new Matrix(row,col);<br>
+for(int i=0; i< row; i++)<br>
+{<br>
+for(int j=0; j< col; j++)<br>
+{<br>
+res.a[i][j] = this.a[i][j] + m.a[i][j];<br>
+}<br>
+}<br>
+return res;<br>
+}<br>
+void dispMatrix()<br>
+{<br>
+for(int i=0; i< row; i++)<br>
+{<br>
+for(int j=0; j< col; j++)<br>
+{<br>
+System.out.print(a[i][j]+"\t");<br>
+}<br>
+System.out.println();<br>
+}<br>
+}<br>
+}<br>
+class MatAdd<br>
+{<br>
+public static void main(String args[])<br>
+{<br>
+Matrix m1 = new Matrix(3,3);<br>
+Matrix m2 = new Matrix(3,3);<br>
+m1.readMatrix();<br>
+m2.readMatrix();<br>
+Matrix res = m1.addMatrix(m2);<br>
+System.out.println("\n---- Matrix M1 ----");<br>
+m1.dispMatrix();<br>
+System.out.println();<br>
+System.out.println("---- Matrix M2 ----");<br>
+m2.dispMatrix();<br>
+System.out.println();<br>
+System.out.println("---- Resultant Matrix ----");<br>
+res.dispMatrix();<br>
+System.out.println();<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

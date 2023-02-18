@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            import java.util.*;<br>
+class Complex<br>
+{<br>
+int realPrt;<br>
+int imgPrt;<br>
+Complex()<br>
+{<br>
+realPrt = 0;<br>
+imgPrt = 0;<br>
+}<br>
+Complex(int realPrt, int imgPrt)<br>
+{<br>
+this.realPrt = realPrt;<br>
+this.imgPrt = imgPrt;<br>
+}<br>
+Complex addComplex(Complex c)<br>
+{<br>
+Complex res = new Complex();<br>
+res.realPrt = this.realPrt + c.realPrt;<br>
+res.imgPrt = this.imgPrt + c.imgPrt;<br>
+return res;<br>
+}<br>
+void dispComplex()<br>
+{<br>
+System.out.println(realPrt+"+ i"+imgPrt);<br>
+}<br>
+}<br>
+class ComplexSum<br>
+{<br>
+public static void main(String args[])<br>
+{<br>
+int a;<br>
+int b;<br>
+Scanner sc = new Scanner(System.in);<br>
+System.out.println("--- Complex 1 ---");<br>
+System.out.print("\tReal Part :- \t");<br>
+a = sc.nextInt();<br>
+System.out.print("\tImaginary Part :- \t");<br>
+b = sc.nextInt();<br>
+Complex c1 = new Complex(a,b);<br>
+System.out.println("--- Complex 2 ---");<br>
+System.out.print("\tReal Part :- \t");<br>
+a = sc.nextInt();<br>
+System.out.print("\tImaginary Part :- \t");<br>
+b = sc.nextInt();<br>
+Complex c2 = new Complex(a,b);<br>
+Complex Res = c1.addComplex(c2);<br>
+System.out.print("Complex 1 :- \t");<br>
+c1.dispComplex();<br>
+System.out.print("Complex 2 :- \t");<br>
+c2.dispComplex();<br>
+System.out.print("Sum Of 2 Complex :- \t");<br>
+Res.dispComplex();<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

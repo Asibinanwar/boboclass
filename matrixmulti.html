@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            import java.util.Scanner;<br>
+class Test{<br>
+public static void main(String args[]){<br>
+Scanner sc = new Scanner(System.in);<br>
+System.out.print("Enter the order - m1:");<br>
+int m1 = sc.nextInt();<br>
+System.out.print("Enter the order - n1:");<br>
+int n1 = sc.nextInt();<br>
+System.out.print("Enter the order - m2:");<br>
+int m2 = sc.nextInt();<br>
+System.out.print("Enter the order - n2:");<br>
+int n2 = sc.nextInt();<br>
+if(n1 != m2){<br>
+System.out.println("Matrix Multiplication not Possible");<br>
+return;<br>
+}<br>
+int A[][] = new int[m1][n1];<br>
+int B[][] = new int[m2][n2];<br>
+int C[][] = new int[m1][n2];<br>
+System.out.println("Read Matrix A");<br>
+for(int i=0;i<m1;i++){<br>
+for(int j=0;j<n1;j++){<br>
+System.out.print("A["+i+"]["+j+"]=");<br>
+A[i][j] = sc.nextInt();<br>
+}<br>
+}<br>
+System.out.println("Read Matrix B");<br>
+for(int i=0;i<m2;i++){<br>
+for(int j=0;j<n1;j++){<br>
+System.out.print("B["+i+"]["+j+"]=");<br>
+B[i][j] = sc.nextInt();<br>
+}<br>
+}<br>
+for(int i=0;i<m1;i++){<br>
+for(int j=0;j<n2;j++){<br>
+C[i][j]=0;<br>
+for(int k=0;k<n1;k++){<br>
+C[i][j] += A[i][k] * B[k][j];<br>
+}<br>
+}<br>
+}<br>
+System.out.println("Matrix A");<br>
+for(int i=0;i<m1;i++){<br>
+for(int j=0;j<n1;j++){<br>
+System.out.print(A[i][j]+"\t");<br>
+}<br>
+System.out.println();<br>
+}<br>
+System.out.println("Matrix B");<br>
+for(int i=0;i<m2;i++){<br>
+for(int j=0;j<n2;j++){<br>
+System.out.print(B[i][j]+"\t");<br>
+}<br>
+System.out.println();<br>
+}<br>
+System.out.println("Matrix C");<br>
+for(int i=0;i<m1;i++){<br>
+for(int j=0;j<n2;j++){<br>
+System.out.print(C[i][j]+"\t");<br>
+}<br>
+System.out.println();<br>
+}<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

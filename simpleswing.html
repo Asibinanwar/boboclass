@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            import javax.swing.*;<br>
+import java.awt.*;<br>
+import java.awt.event.*;<br>
+class Event extends JFrame implements ActionListener<br>
+{<br>
+JButton b1 = new JButton("Click Me");<br>
+JButton b2 = new JButton("Clear");<br>
+JTextField t1 = new JtextField(10);<br>
+Event()<br>
+{<br>
+add(t1);<br>
+add(b1);<br>
+add(b2);<br>
+setLayout(new GridLayout(3,1));<br>
+setSize(400,600);<br>
+setVisible(true);<br>
+b1.addActionListener(this);<br>
+b2.addActionListener(this);<br>
+setDefaultCloseOperation(EXIT_ON_CLOSE);<br>
+}<br>
+public void actionPerformed(ActionEvent e)<br>
+{<br>
+if(e.getSource() == b1)<br>
+{<br>
+t1.setText("Thanks for clicking me...");<br>
+}<br>
+else if(e.getSource() == b2)<br>
+{<br>
+t1.setText("");<br>
+}<br>
+}<br>
+}<br>
+class SampleSwing<br>
+{<br>
+public static void main(String args[])<br>
+{<br>
+Event e = new Event();<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

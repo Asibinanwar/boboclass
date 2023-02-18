@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            import java.util.*;<br>
+class Rectangle<br>
+{<br>
+int length;<br>
+int breadth;<br>
+Rectangle()<br>
+{<br>
+length = 0;<br>
+breadth = 0;<br>
+}<br>
+Rectangle(int length, int breadth)<br>
+{<br>
+this.length = length;<br>
+this.breadth = breadth;<br>
+}<br>
+void calcArea()<br>
+{<br>
+int area = length*breadth;<br>
+System.out.println("Area is "+area);<br>
+}<br>
+}<br>
+class Room extends Rectangle<br>
+{<br>
+int height;<br>
+Room()<br>
+{<br>
+super();<br>
+height = 0;<br>
+}<br>
+Room(int length, int breadth, int height)<br>
+{<br>
+super(length, breadth);<br>
+this.height = height;<br>
+}<br>
+void calcVolume()<br>
+{<br>
+int vol = length*breadth*height;<br>
+System.out.println("Volume is "+vol);<br>
+}<br>
+}<br>
+class SuperDemo<br>
+{<br>
+public static void main(String args[])<br>
+{<br>
+Scanner sc = new Scanner(System.in);<br>
+Room r1 = new Room();<br>
+System.out.println("Enter length, breadth and height of Room 2 :- ");<br>
+int length = sc.nextInt();<br>
+int breadth = sc.nextInt();<br>
+int height = sc.nextInt();<br>
+Room r2 = new Room(length,breadth,height);<br>
+System.out.println("==== Room 1 ====");<br>
+r1.calcArea();<br>
+r1.calcVolume();<br>
+System.out.println("\n==== Room 2 ====");<br>
+r2.calcArea();<br>
+r2.calcVolume();<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

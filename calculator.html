@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            import javax.swing.*;<br>
+import java.awt.*;<br>
+import java.awt.event.*;<br>
+class CalcGUI extends JFrame implements ActionListener<br>
+{<br>
+JLabel l1 = new JLabel("Enter First Number :- ");<br>
+JLabel l2 = new JLabel("Enter Second Number :- ");<br>
+JLabel l3 = new JLabel(" Output is :- ");<br>
+JTextField t1 = new JTextField(10);<br>
+JTextField t2 = new JTextField(10);<br>
+JTextField t3 = new JTextField(10);<br>
+JButton b1 = new JButton(" Addition(+) ");<br>
+JButton b2 = new JButton(" Substraction(-) ");<br>
+JButton b3 = new JButton(" Multiplication(*) ");<br>
+JButton b4 = new JButton(" Division(/) ");<br>
+JButton b5 = new JButton(" Clear ");<br>
+CalcGUI()<br>
+{<br>
+add(l1);<br>
+add(t1);<br>
+add(l2);<br>
+add(t2);<br>
+add(l3);<br>
+add(t3);<br>
+add(b1);<br>
+add(b2);<br>
+add(b3);<br>
+add(b4);<br>
+add(b5);<br>
+setSize(600,600);<br>
+setVisible(true);<br>
+setLayout(new GridLayout(6,2));<br>
+b1.addActionListener(this);<br>
+b2.addActionListener(this);<br>
+b3.addActionListener(this);<br>
+b4.addActionListener(this);<br>
+b5.addActionListener(this);<br>
+setDefaultCloseOperation(EXIT_ON_CLOSE);<br>
+}<br>
+public void actionPerformed(ActionEvent e)<br>
+{<br>
+double num1;<br>
+double num2;<br>
+double opt;<br>
+try<br>
+{<br>
+num1 = Integer.parseInt(t1.getText());<br>
+num2 = Integer.parseInt(t2.getText());<br>
+}<br>
+catch(Exception ef)<br>
+{<br>
+num1 = 0;<br>
+num2 = 0;<br>
+}<br>
+if(e.getSource() == b1)<br>
+{<br>
+opt = num1 + num2;<br>
+t3.setText(String.valueOf(opt));<br>
+}<br>
+else if(e.getSource() == b2)<br>
+{<br>
+opt = num1 - num2;<br>
+t3.setText(String.valueOf(opt));<br>
+}<br>
+else if(e.getSource() == b3)<br>
+{<br>
+opt = num1 * num2;<br>
+t3.setText(String.valueOf(opt));<br>
+}<br>
+else if(e.getSource() == b4)<br>
+{<br>
+opt = num1 / num2;<br>
+t3.setText(String.valueOf(opt));<br>
+}<br>
+else if(e.getSource() == b5)<br>
+{<br>
+t1.setText("");<br>
+t2.setText("");<br>
+t3.setText("");<br>
+}<br>
+}<br>
+}<br>
+class CalculationDemo<br>
+{<br>
+public static void main(String args[])<br>
+{<br>
+CalcGUI c = new CalcGUI();<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>

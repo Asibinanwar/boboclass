@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            class Data<br>
+{<br>
+void addData(int x, int y)<br>
+{<br>
+System.out.println("Inputs are "+x+" and "+y);<br>
+int sum = x+y;<br>
+System.out.println("\tThe Result is "+sum);<br>
+}<br>
+void addData(double x, double y)<br>
+{<br>
+System.out.println("Inputs are "+x+" and "+y);<br>
+double sum = x + y;<br>
+System.out.println("\tThe Result is "+sum);<br>
+}<br>
+void addData(String x, String y)<br>
+{<br>
+System.out.println("Inputs are "+x+" and "+y);<br>
+String conCat = x+y;<br>
+System.out.println("\tThe Result is "+conCat);<br>
+}<br>
+}<br>
+class MethodOverload<br>
+{<br>
+public static void main(String args[])<br>
+{<br>
+Data d1 = new Data();<br>
+d1.addData(5,6);<br>
+d1.addData("Hello","World");<br>
+d1.addData(5.6,6.3);<br>
+}<br>
+}<br>
+        </p>
+    </body>
+</html>
