@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            <br>class Student:<br>
+    <br>def __init__(self, name, roll):<br>
+        <br>self.name = name<br>
+        <br>self.roll = roll<br>
+    
+    <br>def accept_details(self):<br>
+        <br>self.name = input("Enter student name: ")<br>
+        <br>self.roll = input("Enter student roll number: ")<br>
+    
+    <br>def display_details(self):<br>
+        <br>print("Student Name:", self.name)<br>
+        <br>print("Student Roll Number:", self.roll)<br>
+
+<br>class Sports:<br>
+   <br>def __init__(self):<br>
+        <br>self.sports_mark = 0<br>
+        
+    <br>def accept_sports_mark(self):<br>
+        <br>self.sports_mark = int(input("Enter sports mark: "))<br>
+        
+    <br>def display_sports_mark(self):<br>
+        <br>print("Sports Mark:", self.sports_mark)<br>
+
+<br>class Statement(Student, Sports):<br>
+    <br>def __init__(self, name, roll):<br>
+        <br>Student.__init__(self, name, roll)<br>
+        <br>Sports.__init__(self)<br>
+        <br>self.total_marks = 0<br>
+        
+    <br>def accept_subject_mark(self):<br>
+        <br>subject_mark = int(input("Enter subject mark: "))<br>
+        <br>self.total_marks += subject_mark<br>
+        
+    <br>def display_total_marks(self):<br>
+        <br>print("Total Marks:", self.total_marks + self.sports_mark)<br>
+        
+<br># create an object of the Statement class<br>
+<br>student = Statement("John", "001")<br>
+
+<br># accept and display student and sports details<br>
+<br>student.accept_details()<br>
+<br>student.accept_sports_mark()<br>
+<br>student.display_details()<br>
+<br>student.display_sports_mark()<br>
+
+<br># accept and display subject marks and total marks<br>
+<br>student.accept_subject_mark()<br>
+<br>student.display_total_marks()<br>
+        </p>
+    </body>
+</html>

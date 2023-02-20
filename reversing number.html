@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            def reverse_digits(num): <br>
+    # convert the number to a string and reverse it using slicing<br>
+    reversed_str = str(num)[::-1] <br>
+    # convert the reversed string back to an integer<br>
+    reversed_num = int(reversed_str) <br>
+    # count the number of digits in the original number<br>
+    num_digits = len(str(num)) <br>
+    # return the reversed number and the number of digits<br>
+    return reversed_num, num_digits<br>
+
+# read a number from the user<br>
+num = int(input("Enter a number: "))<br>
+
+# call the function to reverse the digits and count the number of digits<br>
+reversed_num, num_digits = reverse_digits(num) <br>
+
+# print the results<br>
+print(f"The reverse of {num} is {reversed_num}.")<br>
+print(f"{num} has {num_digits} digits.") <br>
+
+        </p>
+    </body>
+</html>

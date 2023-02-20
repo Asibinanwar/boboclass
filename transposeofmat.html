@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            <br>def transpose_matrix(matrix):<br>
+    <br>rows = len(matrix)<br>
+    <br>cols = len(matrix[0])<br>
+    <br>transposed_matrix = [[0 for _ in range(rows)] for _ in range(cols)]<br>
+
+    <br>for i in range(rows):<br>
+        <br>for j in range(cols):<br>
+            <br>transposed_matrix[j][i] = matrix[i][j]<br>
+
+    <br>return transposed_matrix<br>
+
+<br># example usage<br>
+<br>matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]<br>
+<br>transposed = transpose_matrix(matrix)<br>
+<br>print(transposed)<br>
+        </p>
+    </body>
+</html>
