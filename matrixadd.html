@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            # read the dimensions of the matrices from the user<br>
+rows = int(input("Enter the number of rows: "))<br>
+cols = int(input("Enter the number of columns: "))<br>
+
+# create the first matrix and read its values from the user<br>
+print("Enter the values of the first matrix:") <br>
+matrix1 = []<br>
+for i in range(rows): <br>
+    row = []<br>
+    for j in range(cols): <br>
+        value = int(input(f"Enter the value of element ({i}, {j}): "))<br>
+        row.append(value) <br>
+    matrix1.append(row) <br>
+
+# create the second matrix and read its values from the user<br>
+print("Enter the values of the second matrix:") <br>
+matrix2 = []<br>
+for i in range(rows): <br>
+    row = []<br>
+    for j in range(cols): <br>
+        value = int(input(f"Enter the value of element ({i}, {j}): "))<br>
+        row.append(value) <br>
+    matrix2.append(row) <br>
+
+# add the matrices element-wise and create the result matrix<br>
+result_matrix = []<br>
+for i in range(rows): <br>
+    row = []<br>
+    for j in range(cols): <br>
+        sum = matrix1[i][j] + matrix2[i][j] <br>
+        row.append(sum) <br>
+    result_matrix.append(row) <br>
+
+# print the result matrix<br>
+print("The result of matrix addition is:") <br>
+for row in result_matrix: <br>
+    print(row) <br>
+
+        </p>
+    </body>
+</html>

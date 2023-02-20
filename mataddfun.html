@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            <br>def read_matrix():<br>
+    <br># read the number of rows and columns<br>
+    <br>rows = int(input("Enter the number of rows: "))<br>
+    <br>cols = int(input("Enter the number of columns: "))<br>
+    <br># read the matrix elements<br>
+    <br>matrix = []<br>
+    <br>for i in range(rows):<br>
+        <br>row = []<br>
+        <br>for j in range(cols):<br>
+            <br>element = int(input(f"Enter the element at row {i+1}, column {j+1}: "))<br>
+            <br>row.append(element)<br>
+        <br>matrix.append(row)<br>
+    <br>return matrix<br>
+
+<br>def add_matrices(matrix1, matrix2):<br>
+    <br># check if the matrices have the same dimensions<br>
+    <br>if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):<br>
+       <br>print("Error: matrices have different dimensions")<br>
+        <br>return None<br>
+    <br># add the matrices element-wise<br>
+    <br>result = []<br>
+    <br>for i in range(len(matrix1)):<br>
+        <br>row = []<br>
+        <br>for j in range(len(matrix1[0])):<br>
+            <br>element = matrix1[i][j] + matrix2[i][j]<br>
+            <br>row.append(element)<br>
+        <br>result.append(row)<br>
+   <br> return result<br>
+
+<br># read the first matrix<br>
+<br>print("Enter the first matrix:")<br>
+<br>matrix1 = read_matrix()<br>
+
+<br># read the second matrix<br>
+<br>print("Enter the second matrix:")<br>
+<br>matrix2 = read_matrix()<br>
+
+<br># add the matrices and print the result<br>
+<br>result = add_matrices(matrix1, matrix2)<br>
+<br>if result is not None:<br>
+    <br>print("The sum of the matrices is:")<br>
+    <br>for row in result:<br>
+        <br>print(row)<br>
+
+        </p>
+    </body>
+</html>

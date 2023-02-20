@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            <br>def read_file(file_path):<br>
+    <br># read the contents of the file and return as a string<br>
+    <br>with open(file_path, "r") as file:<br>
+        <br>content = file.read()<br>
+    <br>return content<br>
+
+<br>def write_file(file_path, content):<br>
+    <br># write the given content to the file<br>
+    <br>with open(file_path, "w") as file:<br>
+        <br>file.write(content)<br>
+
+<br>def copy_file(source_file, destination_file):<br>
+    <br># read the source file<br>
+    <br>content = read_file(source_file)<br>
+    <br># write the content to the destination file<br>
+    <br>write_file(destination_file, content)<br>
+
+<br># prompt the user to enter the file paths<br>
+<br>source_file = input("Enter the path to the source file: ")<br>
+<br>destination_file = input("Enter the path to the destination file: ")<br>
+
+<br># copy the file<br>
+<br>copy_file(source_file, destination_file)<br>
+
+<br>print(f"The contents of {source_file} have been copied to {destination_file}.")<br>
+
+        </p>
+    </body>
+</html>

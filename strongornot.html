@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            n =145<br>
+#save the number in another variable<br>
+temp=n<br>
+sum=0<br>
+f=[0]*10<br>
+f[0]=1<br>
+f[1]=1<br>
+for i in range(2,10): <br>
+    f[i]=f[i-1]*i<br>
+while(temp): <br>
+    r=temp%10 <br>
+    temp=temp//10<br>
+    sum+=f[r] <br>
+
+if(sum==n): <br>
+    print("Yes", n ,"is strong number")<br>
+
+else: <br>
+    print("No" , n, "is not a strong number")<br>
+
+        </p>
+    </body>
+</html>

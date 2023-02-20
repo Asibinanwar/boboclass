@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            <br>def reverse_number(number):<br>
+    <br>if number < 10:<br>
+        <br>return str(number)<br>
+    <br>else:<br>
+        <br>last_digit = number % 10<br>
+        <br>return str(last_digit) + reverse_number(number // 10)<br>
+
+<br># example usage<br>
+<br>number = int(input("Enter an integer: "))<br>
+<br>reversed_number = int(reverse_number(number))<br>
+<br>print("The reversed number is:", reversed_number)<br>
+
+        </p>
+    </body>
+</html>

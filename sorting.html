@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            x=[]<br>
+n=int(input("enter number of elements"))<br>
+print("\n enter digits")<br>
+for i in range(n): <br>
+    d=int (input(""))<br>
+    x.append(d) <br>
+print(x) <br>
+print("\n descending order")<br>
+for i in range(n-1): <br>
+    for j in range(i,n-1): <br>
+        if (x[i]<x[j+1]): <br>
+         temp=int(x[i]) <br>
+         x[i]=x[j+1] <br>
+         x[j+1]=temp<br>
+print(x) <br>
+
+        </p>
+    </body>
+</html>

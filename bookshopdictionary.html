@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            bookshop = {}  # initialize an empty dictionary to store the books and their stock<br>
+
+while True: <br>
+    print("Welcome to the bookshop!") <br>
+    print("1. Add a book")<br>
+    print("2. Sell a book")<br>
+    print("3. Display all books")<br>
+    print("4. Exit")<br>
+
+    choice = input("Enter your choice: ")<br>
+
+    if choice == "1":<br>
+        # add a book<br>
+        title = input("Enter the title of the book: ")<br>
+        copies = int(input("Enter the number of copies to add: "))<br>
+        if title in bookshop: <br>
+            bookshop[title] += copies  # add to existing stock<br>
+        else: <br>
+            bookshop[title] = copies  # add new book and stock<br>
+        print(f"{copies} copies of '{title}' added to the bookshop.") <br>
+
+    elif choice == "2":<br>
+        # sell a book<br>
+        title = input("Enter the title of the book: ")<br>
+        if title in bookshop and bookshop[title] > 0: <br>
+            bookshop[title] -= 1  # reduce stock by 1<br>
+            print(f"'{title}' sold. {bookshop[title]} copies left in stock.") <br>
+        else: <br>
+            print(f"'{title}' is not available or out of stock.") <br>
+
+    elif choice == "3":<br>
+        # display all books<br>
+        if not bookshop: <br>
+            print("The bookshop is currently empty.") <br>
+        else: <br>
+            print("Available books and their stock:") <br>
+            for title, copies in bookshop.items():<br>
+                print(f"'{title}': {copies} copies")<br>
+
+    elif choice == "4":<br>
+        # exit the program<br>
+        print("Thank you for using the bookshop program.") <br>
+        break<br>
+
+    else: <br>
+        print("Invalid choice. Please try again.") <br>
+
+        </p>
+    </body>
+</html>

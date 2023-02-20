@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            # read a list of numbers from the user<br>
+num_list = []<br>
+while True: <br>
+    num = input("Enter a number : ")<br>
+    if num == "q":<br>
+        break<br>
+    num_list.append(int(num)) <br>
+
+# sort the list in decreasing order<br>
+n = len(num_list) <br>
+for i in range(n): <br>
+    for j in range(i+1, n): <br>
+        if num_list[i] < num_list[j]: <br>
+            temp = num_list[i] <br>
+            num_list[i] = num_list[j] <br>
+            num_list[j] = temp<br>
+
+# print the sorted list<br>
+print("The sorted list in decreasing order is:") <br>
+for num in num_list: <br>
+    print(num) <br>
+
+        </p>
+    </body>
+</html>
