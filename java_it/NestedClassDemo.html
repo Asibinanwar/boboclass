@@ -1,0 +1,39 @@
+class OuterClass<br>
+{<br>
+	private int n,r;<br>
+	
+	public OuterClass(int n, int r)<br>
+	{<br>
+		this.n = n;<br>
+		this.r = r;<br>		
+	}<br>
+	
+	public int compute()<br>
+	{<br>
+		NestedClass  nc = new NestedClass();<br>
+		
+		return nc.fact(n) / ( nc.fact(r) * nc.fact(n-r) );
+		<br>
+	}	<br>
+	
+	static class NestedClass<br>
+	{<br>
+		public int fact(int x)<br>
+		{<br>
+			int f=1;<br>
+			for(int i=1;i<=x;i++)<br>
+				f = f * i;<br>
+			return f;<br>
+		}<br>
+	}<br>
+}<br>
+
+
+class NestedClassDemo<br>
+{<br>
+	public static void main(String[] args)<br>
+	{<br>
+		OuterClass o = new OuterClass(5,2);<br>
+		System.out.println("ncr = " + o.compute());	<br>	
+	}<br>
+}<br>
