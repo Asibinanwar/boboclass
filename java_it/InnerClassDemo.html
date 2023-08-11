@@ -1,35 +1,35 @@
-class OuterClass
-{
+class OuterClass<br>
+{<br>
 	private int a,b,c;
+	<br>
+	public OuterClass(int a, int b, int c)<br>
+	{<br>
+		this.a = a;<br>
+		this.b = b;<br>
+		this.c = c;<br>
+	}<br>
 	
-	public OuterClass(int a, int b, int c)
-	{
-		this.a = a;
-		this.b = b;
-		this.c = c;
-	}
+	public void printSum()<br>
+	{<br>
+		InnerClass  i = new InnerClass();<br>
+		System.out.println("sum = " + i.total());<br>	
+	}	<br>
 	
-	public void printSum()
-	{
-		InnerClass  i = new InnerClass();
-		System.out.println("sum = " + i.total());	
-	}	
-	
-	class InnerClass
-	{
-		public int total()
-		{
-			return a + b + c;
-		}
-	}
-}
+	class InnerClass<br>
+	{<br>
+		public int total()<br>
+		{<br>
+			return a + b + c;<br>
+		}<br>
+	}<br>
+}<br>
 
 
-class InnerClassDemo
-{
-	public static void main(String[] args)
-	{
-		OuterClass o = new OuterClass(10,20,30);
-		o.printSum();		
-	}
-}
+class InnerClassDemo<br>
+{<br>
+	public static void main(String[] args)<br>
+	{<br>
+		OuterClass o = new OuterClass(10,20,30);<br>
+		o.printSum();		<br>
+	}<br>
+}<br>
