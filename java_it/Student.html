@@ -1,0 +1,26 @@
+class Student extends Person<br>
+{<br>
+    private int mark1, mark2, mark3;<br>
+    
+    public Student(String name, int age, char gender, int mark1, int mark2, int mark3)<br>
+    {<br>
+        super(name, age, gender);<br>
+        this.mark1 = mark1;<br>
+        this.mark2 = mark2;<br>
+        this.mark3 = mark3;<br>
+    }<br>
+
+    public int total()<br>
+    {<br>
+        return mark1 + mark2 + mark3;<br>
+    }<br>
+
+    public void print()<br>
+    {<br>
+        super.print();<br>
+        System.out.println("mark1 = " + mark1);<br>
+        System.out.println("mark2 = " + mark2);<br>
+        System.out.println("mark3 = " + mark3);<br>
+        System.out.println("total = " + total());<br>
+    }<br>
+}<br>
